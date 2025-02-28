@@ -3,7 +3,7 @@ let getWeather = document.getElementById("getWeather")
 
 async function getData(cityName) {
     try {
-        let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=0687e16d70c3490da6172125252802&q=${cityName}&aqi=yes`);
+        let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=0687e16d70c3490da6172125252802&q=${cityName}&aqi=yes`);
         
         if (!response.ok) {
             throw new Error("Failed to fetch weather data.");
@@ -12,7 +12,7 @@ async function getData(cityName) {
         let data = await response.json();
         return data;
     } catch (error) {
-        console.error("Error fetching weather data:", error);
+        console.log("Error fetching weather data:", error);
         return null; 
     } 
 }
